@@ -1,0 +1,89 @@
+<html>
+<head>
+  <meta charset="utf-8">
+   <title>该布局方式非常常见，适用于定宽的一侧常为导航，自适应的一侧为内容的布局</title>
+   <style>
+      .parent{
+
+      }
+      .left{
+         width:100px;
+         float:left;
+         background-color: #00B7FF;
+      }
+      .right{
+         margin-left:100px;
+         background-color: green;
+      }
+
+      .left1{width:100px;float:left;background-color: indianred;}
+      .right-fix{width:100%;margin-left:-100px;float:right;}
+      .right1{margin-left:100px;background-color: #42b983}
+
+      .left2{width:100px;float:left;background-color: #1d90e6}
+      .right2{overflow:hidden;background-color: burlywood}
+
+
+      .left3{width:100px;float:left;background-color: chocolate}
+      .right3{overflow:hidden;background-color: darkgoldenrod}
+      .parent3{overflow:hidden;}
+      .left3,.right3{padding-bottom:9999px;margin-bottom:-9999px;}
+
+
+
+      .parent4{display:table;table-layout:fixed;width:100%;}
+      .left4{width:100px;background-color: #42b983}
+      .right4,.left4{display:table-cell;background-color: #1d90e6}
+
+      .parent5{display:flex;}
+      .right5{flex:1;background-color: indianred}
+      .left5{width:100px;background-color: lightseagreen}
+
+
+
+      .left6{width:100px;float:left;background-color: #42b983}
+      .center6{float:left;width:100%;margin-right:-200px;background-color: goldenrod}
+      .right6{width:100px;float:right;background-color: #0000cc;}
+   </style>
+</head>
+<body>
+   <div>
+      <div class="left"> float+margin</div>
+      <div class="right">jjjjj</div>
+   </div>
+   <div style="clear:both"></div>
+   <div class="parent">
+      <div class="left1">float+margin</div>
+      <div class="right-fix">
+         <div class="right1">dgerg</div>
+      </div>
+   </div>
+
+   <div style="clear:both"></div>
+   <div>
+      <div class="left2">float+overflow</div>
+      <div class="right2">fwefwef</div>
+   </div>
+
+   <div style="clear:both"></div>
+   <div class="parent3">
+      <div class="left3">float+overflow</div>
+      <div class="right3">fwefwf</div>
+   </div>
+
+   <div class="parent4">
+      <div class="left4">table</div>
+      <div class="right4">fwefwf</div>
+   </div>
+   <div class="parent5">
+      <div class="left5">table</div>
+      <div class="right5">fwefwf</div>
+   </div>
+
+  <div class="parent6">
+     <div class="left6">lwerew</div>
+     <div class="center6">center</div>
+     <div class="right6">rwef</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       .method2{display:inline-block;vertical-align:middle;
+           line-height:50px; background-color: #82ffe4}
+       .method3 {
+           display: table-cell;
+           vertical-align: middle;
+           height: 50px;
+           background-color: #82ffe4
+       }
+       .method4{
+           position:relative;
+           background-color: #ff7e97;
+           height:50px;
+        }
+        .method4-child{
+            position:absolute;top:50%;transform:translate(0,-50%);
+        }
+        .flex{
+            display:flex;
+            align-items:center;
+            background-color: #00B7FF;
+            height:50px
+        }
+
+    </style>
+</head>
+<body>
+<div class="flex">
+   <div >使用flex实现:测试一下垂直水平居中效果</div>
+</div>
+<br>
+<br>
+<div class="method2">
+   inline-block 测试一下垂直效果
+</div>
+<br>
+<br>
+<div class="method3"> table-cell 测试一下垂直居中</div>
+<br>
+<br>
+
+<div class="method4"><div class="method4-child">绝对定位:测试垂直居中</div></div>
+
+</body>
+</html>

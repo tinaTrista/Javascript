@@ -1,0 +1,108 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>该布局方式非常常见，适用于定宽的一侧常为导航，自适应的一侧为内容的布局</title>
+    <style>
+
+
+
+        .parent6{width:100%; margin:0 auto;}
+        .left6{width:200px;height:100px;float:left;background-color: #42b983}
+        .center6{height:100px;margin-right:150px;margin-left:200px;background-color: #A33739}
+        .right6{width:150px;height:100px;float:right;background-color: #0000cc;}
+
+        .parent1{display:flex;}
+        .left1{width:100px;background-color: #1d90e6}
+        .center1{flex:1;background-color: grey}
+        .right1{width:100px;background-color: hotpink}
+
+
+        .parent2{width:100%;display:table;table-layout:fixed}
+        .left2,.center2,.right2{display:table-cell;}
+        .center2{
+            background-color: indianred;
+        }
+        .left2{width:100px;background-color: #00B7FF}
+        .right2{width:100px;background-color: #A33739}
+
+        .parent3{
+           margin-left:-20px;
+        }
+        .column{
+            width:25%;
+            float:left;
+            padding-left:20px;
+            height:100px;
+            background-color: #1d90e6;
+            box-sizing:border-box;./*关键*/
+        }
+
+
+        .parent{display:flex;flex-direction:column;}
+        .row{height:100px;display:flex;}
+        .item{width:100px;height:100px;background:red;}
+    </style>
+</head>
+<body>
+
+
+
+<div class="parent1">
+    <div class="left1">flex</div>
+    <div class="center1">center</div>
+    <div class="right1">rwef</div>
+</div>
+
+<div class="parent2">
+    <div class="left2">flex</div>
+    <div class="center2">center</div>
+    <div class="right2">rwef</div>
+</div>
+
+<div style="width:100%; margin:0 auto;">
+
+    <div style="width:200px; height:100px;float:right; background-color:#960"> 固定宽度</div>
+
+    <div style="width:150px; height:100px;float:left; background:#6FF">固定宽度</div>
+
+    <div style="height:100px;margin-left:150px;margin-right:200px; background-color:#9F3">中间内容，自适应宽度</div>
+
+</div>
+
+
+<div style="width:100%; margin:0 auto;">
+    <div style="width:100px;height:100px;float:right;background-color: #42b983">lwerew</div>
+    <div style="width:100px;height:100px;float:left;background-color: #0000cc;">givigiu</div>
+    <div style="height:100px;margin-right:100px;margin-left:100px;background-color: #A33739">rwef</div>
+</div>
+
+<div>
+    <div style="float:left;background-color: #A33739">float+overflow</div>
+    <div style="overflow:hidden;background-color: #0000cc">一列不定带宽，一列自适应</div>
+</div>
+
+<div style="display:flex">
+    <div style="background-color: #A33739">flex</div>
+    <div style="flex:1;background-color: #0000cc">一列不定带宽，一列自适应</div>
+</div>
+
+<!--
+多列等分布局常出现在内容中，多数为功能的，同阶级内容的并排显示等
+-->
+<div class="parent3">
+    <div class="column">float实现</div>
+    <div class="column">1</div>
+    <div class="column">1</div>
+    <div class="column">1</div>
+</div>
+
+<div style="clear:both"></div>
+
+
+<div class="parent">
+    <div class="row"><div class="item">1</div><div class="item">1</div><div class="item">1</div></div>
+    <div class="row"><div class="item">1</div><div class="item">1</div><div class="item">1</div></div>
+    <div class="row"><div class="item">1</div><div class="item">1</div><div class="item">1</div></div>
+</div>
+</body>
+</html>
