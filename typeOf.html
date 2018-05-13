@@ -1,0 +1,29 @@
+<script>
+  /**
+   * typeof 操作符 检测数据类型
+   * @return 字符串 undefined object number string boolean function
+   */
+   var str = "xxxx";
+   console.log(typeof str); // string
+   var un;
+   console.log(typeof un); // undefined
+   var nu = null;
+   console.log(typeof nu); // object
+   var message = 'hello';
+   if(message) {
+     console.log('value is true'); // 任何非空字符串转换为true
+   }
+   // NaN 用于表示本来要返回数值的操作数未返回数值的情况
+   // 任何涉及NaN的操作都返回NaN
+   console.log(isNaN(NaN), isNaN("10")) // true false
+   console.log(isNaN('blue')) // true 不能转换为数值
+
+   // 数值转换 Number()
+   console.log(Number("hello")) // NaN
+   var ob = {
+     'test': "Number()"
+   }
+   console.log('object', Number(ob))
+   console.dir(ob)
+
+</script>
