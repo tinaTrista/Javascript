@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+  <style>
+  body{
+    font-family: "Helvetica","Arial",serif;
+    color:#333;
+    background-color: #ccc;
+    margin:1em 10%
+  }
+  h1 {
+    color:#333;
+    background-color:transparent;
+  }
+  a {
+    color: #c60;
+    background-color: transparent;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  ul{
+    padding:0;
+  }
+  li{
+    float:left;
+    padding:1em;
+    list-style:none;
+  }
+  img{
+    display: block;
+    clear:both;
+  }
+  </style>
+</head>
+<body>
+  <h1>snapshots</h1>
+  <ul>
+    <li>
+      <a href="./img/stock1.jpg" title="stock1" onClick="showpic(this); return false">one</a>
+    </li>
+    <li>
+      <a href="./img/stock2.jpg" title="stock2" onClick="showpic(this); return false">two</a>
+    </li>
+    <li>
+      <a href="./img/stock3.jpg" title="stock3" onClick="showpic(this); return false">three</a>
+    </li>
+    <li>
+      <a href="./img/stock4.jpg" title="stock4" onClick="showpic(this); return false">four</a>
+    </li>
+    <li>
+      <a href="./img/stock5.jpg" title="stock5" onClick="showpic(this); return false">five</a>
+    </li>
+    <li>
+      <a href="./img/stock6.jpg" title="stock6" onClick="showpic(this); return false">six</a>
+    </li>
+  </ul>
+  <img id="placeholder" style="width:400px; height:300px;"src="./img/img.jpg" alt="show image" />
+  <p id='description'>choose an image </p>
+  <script>
+  function showpic(whichpic) {
+    var href = whichpic.getAttribute('href');
+    var title = whichpic.getAttribute('title');
+    var placeholder = document.getElementById('placeholder');
+    var des = document.getElementById('description');
+    des.firstChild.nodeValue = title;
+    placeholder.setAttribute('src', href);
+  }
+  function countBodyChildren() {
+    var body_ele = document.getElementsByTagName('body')[0];
+    var count = body_ele.childNodes.length
+  }
+  window.onload = countBodyChildren;
+  </script>
+</body>
+</html>
