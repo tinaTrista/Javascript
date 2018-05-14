@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+  <link rel='stylesheet' type='text/css' href="./gallery.css"/>
+</head>
+<body>
+  <h1>snapshots</h1>
+  <ul id='gallery'>
+    <li>
+      <a href="./img/stock1.jpg" title="stock1" >one</a>
+    </li>
+    <li>
+      <a href="./img/stock2.jpg" title="stock2" >two</a>
+    </li>
+    <li>
+      <a href="./img/stock3.jpg" title="stock3" >three</a>
+    </li>
+    <li>
+      <a href="./img/stock4.jpg" title="stock4" >four</a>
+    </li>
+    <li>
+      <a href="./img/stock5.jpg" title="stock5" >five</a>
+    </li>
+    <li>
+      <a href="./img/stock6.jpg" title="stock6">six</a>
+    </li>
+  </ul>
+  <img id="placeholder" src="./img/img.jpg" alt="show image" />
+  <p id='description'>choose an image </p>
+  <script>
+  function showpic(whichpic) {
+    var placeholder = document.getElementById('placeholder');
+    if(!placeholder) return false;
+    var href = whichpic.getAttribute('href');
+    placeholder.setAttribute('src', href);
+    var des = document.getElementById('description');
+    if(des) {
+      var title = whichpic.getAttribute('title')? whichpic.getAttribute('title'):'';
+      des.firstChild.nodeValue = title;
+    }
+    return true;
+  }
+  function parseGallery() {
+    // 检测dom操作是否可用
+    if(!document.getElementById) return false;
+    if(!document.getElementsByTagName) return false;
+    // 检测是否存在图片库元素
+    var gallery = document.getElementById('gallery');
+    if(!gallery) return false;
+    // 添加事件处理函数
+    var alink = gallery.getElementsByTagName('a');
+    for(var i =0; i < alink.length;i++) {
+      alink[i].onclick = function() {
+        showpic(this)
+        return false;
+      }
+    }
+  }
+  function addloadEvent(func){
+    var oldonload = window.onload;
+    if (typeof window.onload !=='function') {
+      window.onload = func;
+    } else {
+      window.onload = function() {
+        oldonload();
+        func()
+      }
+    }
+  }
+  // 加载程序
+  addloadEvent(parseGallery)
+  </script>
+</body>
+</html>
