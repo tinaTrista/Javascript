@@ -1,0 +1,13 @@
+<script>
+function isInteger(x) {
+  return (x ^ 0) === x;//按位异或运算
+  return Math.round(x) === x;
+}
+// 判断回文
+function isPalindrome(str) {
+  str = str.replace(/w/g, '').toLowerCase();
+  console.log(str,str.replace(/w/g, ''))
+  return (str == str.split('').reverse().join(''));
+}
+console.log(isPalindrome('abccba'));
+</script>
