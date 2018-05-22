@@ -26,17 +26,7 @@ function parseGallery() {
     }
   }
 }
-function addloadEvent(func){
-  var oldonload = window.onload;
-  if (typeof window.onload !=='function') {
-    window.onload = func;
-  } else {
-    window.onload = function() {
-      oldonload();
-      func()
-    }
-  }
-}
+
 function insertAfter(newel, targetel) {
   var parent = targetel.parentNode;
   if (parent.lastChild === targetel) {
@@ -47,7 +37,7 @@ function insertAfter(newel, targetel) {
 }
 function preparePlaceholder() {
   var img = document.createElement('img');
-  img.setAttribute('src', './img/img.jpg');
+  img.setAttribute('src', '../img/img.jpg');
   img.setAttribute('id', 'placeholder');
   img.setAttribute('alt', 'show image');
   var des = document.createElement('p');

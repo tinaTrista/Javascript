@@ -30,3 +30,10 @@ img{
   width:400px;
   height:300px;
 }
+#linkList{
+  list-style: none;
+}
+#linkList a {
+  display: block;
+  width:20px;
+}
