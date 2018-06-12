@@ -1,0 +1,38 @@
+javascript 不存在类和实例的概念
+
+问题一：没有类，那么JavaScript怎么实现继承呢？
+Brendan Eich为构造函数设置了一个prototype属性。
+这个属性包含一个对象（即"原型对象"），所有实例对象需要共享的属性和方法，
+都放在这个对象里面；不需要共享的属性和方法，就放在构造函数里面。
+
+JavaScript中所有的对象都是由构造函数生成的，
+每个对象都共同继承构造函数的原型对象中的属性和方法
+
+因此在xxx对象内部，有两种方式访问它继承的原型：
+1、xxx.constructor.prototype
+2、xxx.__proto__
+第一种方法，源于每个对象都拥有一个内置属性constructor指向其构造函数；
+第二种方法源于每个对象都有一个内部指针[[prototype]]，直接指向其原型，这个内部指针是不可访问的，
+但是有些浏览器暴露出一个__proto__属性，用于直接访问原型对象。
+
+问题二： 原型链？
+因为所有对象都是由构造函数生成的，也就是说所有对象，
+都必然继承某个原型，而原型本身也是对象，它也会继承别的原型，如此环环相扣就形成了原型链
+
+问题三：原型链的根
+所有原型链都汇聚到同一个源头，那就是Object.prototype, 而它本身也是一个对象，也有prototype属性
+Object.prototype.__proto__ === null
+
+问题四：对象的原型指向谁？
+1. 对象直接量的原型对象是Object.prototype；
+var obj = { }; obj.__proto__ === Object.prototype // true
+2. 克隆，通过Object.create( )创建的对象，其原型是由第一个参数指定的对象
+3. 通过构造函数创建的对象，其原型即构造函数的原型对象。
+
+问题：函数的原型？
+所有的函数都共同继承一个原型对象，那就是Function.prototype。
+Array.__proto__ === Function.prototype // true
+Function.__proto__ === Function.prototype // true
+Object.__proto__ === Function.prototype // true
+var f = function () { }; f.__proto__ === Function.prototype // true
+为什么函数也有__proto__属性？这不奇怪，因为函数也是对象（可调用的对象）。
