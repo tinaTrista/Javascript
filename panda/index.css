@@ -1,0 +1,35 @@
+html {
+    font-family: "Whitney SSm A", "Whitney SSm B", "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+.mega-header{
+    background-color: #8e8e8e;
+    color: white;
+    position: relative;
+    padding: 2rem;
+}
+.panda-header{
+  height:50px;display:flex;flex-direction:row;justify-content:space-between;
+  position: absolute;
+  left:0;
+  top:0;
+  right:0;
+}
+.panda-img{
+  width:200px;
+  height:45px;
+}
+#container{
+  position: absolute;
+  top:50px;
+  height:100%;background-color:#eef2f3;
+  overflow:auto;padding:50px 300px 50px 300px;
+}
+#result{
+  display: none;
+}
+
+h1{
+  font-family: "Whitney Cond A", "Whitney Cond B", "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+}

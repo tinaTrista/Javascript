@@ -1,0 +1,130 @@
+<html>
+<header>
+  <title>panda</title>
+  <link rel="stylesheet" href="./index.css"/>
+</header>
+<body>
+  <header class="panda-header">
+    <img src="./panda.svg" class="panda-img">
+    <img id="result" src="./panda-sad.svg" class="panda-img"></span>
+  </header>
+  <div id="container">
+    <article>
+      <header class="mega-header">
+        <h1 class="p-name">
+                Random Day in the Life of a&nbsp;Developer
+      </h1>
+      </header>
+      <p class="author-byline">
+        <span class="author-and-date">
+                By
+        <a href="https://css-tricks.com/author/chriscoyier/">
+                    <span class="p-author">
+            Chris Coyier          </span>
+        </a>
+        <span class="slashes">On</span>
+        <time datetime="2018-07-10" class="dt-published">
+          July 10, 2018        </time>
+        </span>
+      </p>
+      <div class="article-content">
+        <p>Yesterday, I started going through my email as soon as I got to work. I always start my day with email. <a href="http://email-is-good.com/">I kinda like email.</a> I read some interesting things in keeping up with the industry. I deal with some
+          business things. I handle with some personal things. I make a note of the most important stuff going on. </p>
+        <p>Then I kept working!</p>
+        <p><span id="more-273605"></span></p>
+        <hr>
+        <p>I fixed a bug that was affecting Firefox exclusively. This code would set some elements in a row with flexbox, let them wrap, then looked at all of them to see which ones wrapped and which ones didn't. Then it put the ones that wrapped in an overflow
+          menu. Seemed simple enough. But some of the items were in <strong>bold</strong> text and some were not. The ones that were not bold were somehow pushed down 1.5px in Firefox (but in no other browser I looked at). The code checked to see if the
+          <code>top</code> position was anything higher than <code>0</code> in order to check if they wrapped, and thus incorrectly marked some elements as being wrapped. The code had to be loosened up to accommodate that.</p>
+        <hr>
+        <p><a href="https://twitter.com/real_Css_Tricks">I tweeted some things</a> that looked particularly interesting that day.</p>
+        <hr>
+        <p>I had logged a bug a few days ago where a couple of small buttons were not styled or aligned how they should be in a common modal dialog. In diagnosing the issue, it looks like we had a weird git merge where some newer CSS was merged in that was
+          assuming some HTML that wasn't quite live yet.</p>
+        <p>I decided the cleanest way forward was to make the small HTML change forthcoming in the new branch in a new fixer branch that could go out quickly. The alternative was reverting the CSS back and my guess was that would have caused worse merge
+          conflicts later, plus it was worth taking advantage of the newer, nicer styling now.</p>
+        <p>Then, because of course it did, the small HTML change caused another bug. The JavaScript that was watching those buttons couldn't find them anymore and I failed to test it or, ideally, write a test for it. So, I had to fix that too, but sadly
+          only after a user reported it. Gosh, I gotta improve our integration tests there.</p>
+        <hr>
+        <p>I was in two meetings. One was a standard weekly catchup meeting. One was with a new person I'd never met before and we were exploring if there was an interesting way we could work together.</p>
+        <hr>
+        <p>I fixed a bug with some bad backend logic (that I had written myself, of course). I wanted to display some information to a user based on, I thought, if they were on a team or not. I got that logic right, but it turns out the messaging was depended
+          on that team being active (i.e. not expired in some way), so I had to update the logic to account for that. My team member helped me think it through because I didn't understand the way billing and active subscriptions were tied to the user
+          well enough.</p>
+        <hr>
+        <p>I fixed a bug where a UI element was showing a strong warning state, but there was no way to find out what the problem was. It was a big red box with an exclamation point in it. It even had a hover state. But clicking it did nothing.</p>
+        <p>Turns out it was just a problem with event delegation. It was being added to the page after click handlers attempted to bind two elements like that. I fixed it by re-binding those click handlers after of the error UI was appended. It didn't feel
+          great. A better fix might have been updating the event delegation to be more efficient about this case. But, I'd been burned by that in the past, so this fix seemed more robust, even if less elegant and efficient. </p>
+        <p>It made me <em>pine</em> for the page being ported to React, where a silly event delegation bug would have never been an issue. Not long after, I fixed another bug where a click handler had been bound to a <code>span.class_name</code>, and the
+          span was updated to be a button. That was a semantic and accessibility win, but broke the handler.</p>
+        <p>Again, something that just doesn't happen in React.</p>
+        <hr>
+        <p>Then I wrote this blog post and went home.</p>
+        <div class="sharedaddy sd-sharing-enabled">
+          <div class="robots-nocontent sd-block sd-social sd-social-text sd-sharing">
+            <h3 class="sd-title has-header-link" id="article-header-id-0"><a class="article-headline-link" href="#article-header-id-0">#</a>Share this:</h3>
+            <div class="sd-content">
+              <ul>
+                <li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-273605" class="share-facebook sd-button no-icon" href="https://css-tricks.com/random-day-in-the-life-of-a-developer/?share=facebook&amp;nb=1" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li>
+                <li
+                  class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-273605" class="share-twitter sd-button no-icon" href="https://css-tricks.com/random-day-in-the-life-of-a-developer/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li>
+                  <li
+                    class="share-end"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="jp-relatedposts" class="jp-relatedposts">
+          <h3 class="jp-relatedposts-headline has-header-link" id="article-header-id-1"><a class="article-headline-link" href="#article-header-id-1">#</a><em>Related</em></h3>
+          <div class="jp-relatedposts-items jp-relatedposts-items-visual jp-relatedposts-grid ">
+            <div class="jp-relatedposts-post jp-relatedposts-post0 jp-relatedposts-post-thumbs" data-post-id="1350" data-post-format="false"><a class="jp-relatedposts-post-a" href="https://css-tricks.com/about-the-css-tricks-redesign/" title="About the CSS-Tricks Redesign
+
+In case you haven't noticed, I've done a bit of a design overhaul around here. I thought I'd take the opportunity to go over some points and features of the new design. Why? Because it was fun. Because I'm a designer and we never stay satisfied. Because I think websites…"
+                rel="nofollow" data-origin="273605" data-position="0"><img class="jp-relatedposts-post-img" src="https://i2.wp.com/css-tricks.com/wp-content/csstricks-uploads/fontinexample.jpg?resize=350%2C200&amp;ssl=1" width="350" alt="About the CSS-Tricks Redesign"></a>
+              <h4
+                class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://css-tricks.com/about-the-css-tricks-redesign/" title="About the CSS-Tricks Redesign
+
+In case you haven't noticed, I've done a bit of a design overhaul around here. I thought I'd take the opportunity to go over some points and features of the new design. Why? Because it was fun. Because I'm a designer and we never stay satisfied. Because I think websites…"
+                  rel="nofollow" data-origin="273605" data-position="0">About the CSS-Tricks Redesign</a></h4>
+                <p class="jp-relatedposts-post-excerpt">In case you haven't noticed, I've done a bit of a design overhaul around here. I thought I'd take the opportunity to go over some points and features of the new design. Why? Because it was fun. Because I'm a designer and we never stay
+                  satisfied. Because I think websites…</p>
+                <p class="jp-relatedposts-post-date" style="display: block;">November 10, 2008</p>
+                <p class="jp-relatedposts-post-context">In "Article"</p>
+            </div>
+            <div class="jp-relatedposts-post jp-relatedposts-post1 jp-relatedposts-post-thumbs" data-post-id="14475" data-post-format="false"><a class="jp-relatedposts-post-a" href="https://css-tricks.com/building-a-starburst-with-css/" title="Building a Starburst with CSS
+
+If there's one thing I love most about what I do it's building out the challenges that a designer throws my way. There's almost always a way to reproduce a design in code, and I love figuring out how to get as close to the original design as possible with…"
+                rel="nofollow" data-origin="273605" data-position="1"><img class="jp-relatedposts-post-img" src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2011/10/thinking.jpg?resize=350%2C200&amp;ssl=1" width="350" alt="Building a Starburst with CSS"></a>
+              <h4
+                class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://css-tricks.com/building-a-starburst-with-css/" title="Building a Starburst with CSS
+
+If there's one thing I love most about what I do it's building out the challenges that a designer throws my way. There's almost always a way to reproduce a design in code, and I love figuring out how to get as close to the original design as possible with…"
+                  rel="nofollow" data-origin="273605" data-position="1">Building a Starburst with CSS</a></h4>
+                <p class="jp-relatedposts-post-excerpt">If there's one thing I love most about what I do it's building out the challenges that a designer throws my way. There's almost always a way to reproduce a design in code, and I love figuring out how to get as close to the original design
+                  as possible with…</p>
+                <p class="jp-relatedposts-post-date" style="display: block;">October 6, 2011</p>
+                <p class="jp-relatedposts-post-context">In "Article"</p>
+            </div>
+            <div class="jp-relatedposts-post jp-relatedposts-post2 jp-relatedposts-post-nothumbs" data-post-id="253010" data-post-format="false"><a class="jp-relatedposts-post-a jp-relatedposts-post-aoverlay" href="https://css-tricks.com/debugging-tips-tricks/" title="Debugging Tips and Tricks
+
+Writing code is only one small piece of being a developer. In order to be efficient and capable at our jobs, we must also excel at debugging. When I dedicate some time to learning new debugging skills, I often find I can move much quicker, and add more value to…"
+                rel="nofollow" data-origin="273605" data-position="2"></a>
+              <h4 class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://css-tricks.com/debugging-tips-tricks/" title="Debugging Tips and Tricks
+
+Writing code is only one small piece of being a developer. In order to be efficient and capable at our jobs, we must also excel at debugging. When I dedicate some time to learning new debugging skills, I often find I can move much quicker, and add more value to…" rel="nofollow" data-origin="273605" data-position="2">Debugging Tips and Tricks</a></h4>
+              <p class="jp-relatedposts-post-excerpt" style="max-height: 7.5em;">Writing code is only one small piece of being a developer. In order to be efficient and capable at our jobs, we must also excel at debugging. When I dedicate some time to learning new debugging skills, I often find I can move much quicker,
+                and add more value to…</p>
+              <p class="jp-relatedposts-post-date" style="display: block;">April 11, 2017</p>
+              <p class="jp-relatedposts-post-context">In "Article"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+  </div>
+  <script src="./debounce.js"></script>
+</body>
+
+</html>
