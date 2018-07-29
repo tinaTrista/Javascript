@@ -1,0 +1,45 @@
+
+
+<!--
+html响应式布局设计
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0,user-scalable=no;" /> -->
+</head>
+<style>
+body{
+  font-size: 0.14rem ; /*实际相当于14px*/
+}
+</style>
+<body>
+  <p >
+    this is test
+  </p>
+<script>
+
+// orientationchange 方向改变事件
+// 
+// DOMContentLoaded dom内容加载完毕事件
+(function (doc, win) {
+
+  var docEl = doc.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc = function () {
+      console.log('recalc')
+      var clientWidth = docEl.clientWidth;
+      if (!clientWidth) return;
+      docEl.style.fontSize = 100 * (clientWidth / 320) + 'px';
+      console.log(docEl.style.fontSize)
+    };
+    console.log(resizeEvt)
+  // Abort if browser does not support addEventListener
+  if (!doc.addEventListener) return;
+  win.addEventListener(resizeEvt, recalc, false);
+  doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+</script>
+</body>
+</html>
