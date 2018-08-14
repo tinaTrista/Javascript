@@ -1,0 +1,62 @@
+<!--
+
+vw：视窗宽度的百分比（1vw 代表视窗的宽度为 1%）
+vh：视窗高度的百分比
+-->
+
+
+<!DOCTYPE html>
+<html>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100vh;
+}
+ #wrap {
+    height: auto;
+    min-height: 100%;
+}
+#main {
+    padding-bottom: 150px;
+}
+#footer {
+    margin-top: -150px;
+    height: 150px;
+	  background: #0c8ed9
+}
+/* footer高度的负值*/
+/* #wrap {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+#main {
+    flex:1;
+}
+#footer {
+    height: 150px;
+	  background: #0c8ed9
+} */
+</style>
+
+
+<body>
+  <div id="wrap">
+      <div id="main">正文</div>
+  </div>
+  <div id="footer">底部</div>
+  <!--底部和外层同级-->
+<!-- <div id="wrap">
+    <div id="main">正文
+      <div>
+
+      </div>
+    </div>
+    <div id="footer">底部</div>
+</div> -->
+</body>
+</html>
